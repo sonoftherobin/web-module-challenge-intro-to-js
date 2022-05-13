@@ -38,11 +38,11 @@ Do the following:
    HINT: no function required
 */
 
-let firstThing = (50);
-const secondThing =(42);
+let firstThing = (22);
+const secondThing =(21);
 
 if(firstThing>secondThing){
-  let firstThing =(12);
+  let firstThing =(13);
   console.log(firstThing);
 
 };
@@ -60,7 +60,7 @@ Do the following:
    HINT: look up the Number method
 */
 var partylike = ('1999');
-partylike =(1999);
+Number(partylike);
 console.log(partylike);
 
 
@@ -88,7 +88,7 @@ Do the following:
  2. Use the received value to calculate the age in dog years (1 human year is equal to 7 dog years)
  3. Return the newly calculated age
 */
-function dogYears(age,){
+function dogYears(age){
    return age*7;
 }
 
@@ -139,7 +139,7 @@ NOTE 2: This is a great time to check the tests to see what it expects, versus w
 */  
 
 function hungryDog(dogWeigth, dogAge){
-  if (dogAge >=1 ){
+  if (dogAge >=1){
     if (dogWeigth > 15){
       return dogWeigth* .02
     }
@@ -147,8 +147,8 @@ function hungryDog(dogWeigth, dogAge){
      else if(dogWeigth <= 15 && dogWeigth > 10){
       return dogWeigth * .03
     }
-      else if (dogWeigth <= 10 && dogWeigth >5){
-       return dogWeigth *.04
+      else if (dogWeigth <= 10 && dogWeigth > 5){
+       return dogWeigth * .04
      }else if (dogWeigth <= 5){
        return dogWeigth * .05
      }
@@ -157,7 +157,7 @@ function hungryDog(dogWeigth, dogAge){
       if(dogAge >= .58){
         return dogWeigth * .04
       }
-      else if( dogAge >= .33 && dogAge <= .58){
+      else if(dogAge >= .33 && dogAge <= .58){
         return dogWeigth * .05
       }
       else if (dogAge < .33)
@@ -191,8 +191,16 @@ Use the game function below to do the following:
 
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
-
+let randomNum = Math.random
 function game(user,comp){
+  if(randomNum <= .33){
+    randomNum ='rock'
+      }else if(randomNum >= .66){
+    randomNum ='paper'
+      }
+      else{
+        randomNum ='scissors'
+      }
   if(user===comp){
     return "it's a tie"
   }
@@ -209,18 +217,6 @@ function game(user,comp){
   }
 
 
-let randomNum = Math.random
-if(randomNum <= .33){
-  randomNum ='rock'
-    }else if(randomNum >= .66){
-  randomNum ='paper'
-    }
-    else{
-      randomNum ='scissors'
-    }
-console.log(game('rock',randomNum));
-
-
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 //Metric Converter 
@@ -232,9 +228,8 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(kilo){
-   return kilo*0.621371
-
+function miles(kiloMeters){
+   return kiloMeters*0.621371
 }
 
 //Task 5b - Feet to CM
@@ -265,12 +260,16 @@ Using the annoyingSong function below do the following:
 4. Each time the annoyingSong is run from this loop, it should console.log the string that was returned. 
 */
 
-function annoyingSong(i){
+function annoyingSong(btls){
   
-  return `${i} bottles of soda on the wall, ${i} bottles of soda, take one down pass it around ${i-1} bottles of soda on the wall`
+  return `${btls} bottles of soda on the wall, ${btls} bottles of soda, take one down pass it around ${btls-1} bottles of soda on the wall`
 }
-
-
+ for (let btls=10; btls>1; btls--){
+   annoyingSong(10)
+   console.log(annoyingSong(btls));
+ }
+ 
+ 
 
 
 
@@ -322,9 +321,19 @@ HINT - try looking up the .includes() method
 */
 
 
-function vowelCounter(/*add your code here*/) {
-  /*add your code here*/
+function vowelCounter(someWords) {
+  const type= someWords.toLowerCase();
+  const v = [type];
+  console.log(type.includes('hello'));
 }
+
+ // for(let i=0; i>v.length; i++){
+   
+//}
+vowelCounter('HELLO WORLD');
+
+  
+
 
 
 
